@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rafia Minhaj - Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1e293b;
+      --secondary: #475569;
+      --accent: #2563eb;
+      --text: #0f172a;
+      --light-text: #64748b;
+      --border: #e2e8f0;
+      --bg: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background-color: var(--bg);
+      line-height: 1.5;
+      padding: 40px;
+      max-width: 900px;
+      margin: 0 auto;
+      font-size: 13px;
+    }
+
+    /* Header Section */
+    .header {
+      text-align: center;
+      margin-bottom: 25px;
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 15px;
+    }
+
+    .header h1 {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 5px;
+    }
+
+    .header .subtitle {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      font-size: 12px;
+      color: var(--secondary);
+    }
+
+    .contact-info a {
+      color: var(--secondary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .contact-info a:hover {
+      color: var(--accent);
+    }
+
+    /* Career Objective */
+    .section-objective {
+      margin-bottom: 20px;
+    }
+
+    .objective-text {
+      text-align: justify;
+      color: var(--secondary);
+    }
+
+    /* Section Headings */
+    .section-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 5px;
+      margin-bottom: 12px;
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    /* Education & Experience Blocks */
+    .item-block {
+      margin-bottom: 15px;
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-weight: 600;
+      font-size: 13px;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    .item-company {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .item-date {
+      color: var(--light-text);
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .item-bullets {
+      list-style-type: square;
+      margin-left: 18px;
+      color: var(--secondary);
+    }
+
+    .item-bullets li {
+      margin-bottom: 4px;
+      text-align: justify;
+    }
+
+    /* Technical Skills Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      row-gap: 8px;
+      margin-bottom: 15px;
+    }
+
+    .skills-category {
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .skills-list {
+      color: var(--secondary);
+    }
+
+    /* Projects Grid */
+    .project-header {
+      font-weight: 700;
+      font-size: 13px;
+      color: var(--primary);
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .project-tech {
+      font-style: italic;
+      color: var(--accent);
+      font-weight: 500;
+      font-size: 12px;
+    }
+
+    .project-links {
+      font-size: 11px;
+      color: var(--light-text);
+    }
+
+    .project-links a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* Key Strengths & Soft Skills List */
+    .strengths-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .strength-tag {
+      background-color: var(--border);
+      color: var(--primary);
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    /* Print Stylesheet Adjustments */
+    @media print {
+      body {
+        padding: 0;
+        margin: 0;
+        font-size: 11.5px;
+        color: #000;
+      }
+      .section-title {
+        margin-top: 15px;
+        font-size: 13px;
+        border-bottom: 1.5px solid #000;
+      }
+      .header h1 {
+        font-size: 22px;
+      }
+      .header {
+        margin-bottom: 15px;
+        border-bottom: 2px solid #000;
+      }
+      .item-header {
+        font-size: 12px;
+      }
+      .item-bullets {
+        margin-left: 15px;
+      }
+      .item-bullets li {
+        margin-bottom: 2px;
+      }
+      .strengths-list {
+        margin-top: 5px;
+      }
+      .strength-tag {
+        background-color: #f1f5f9;
+        border: 1px solid #e2e8f0;
+      }
+      /* Prevent elements splitting across pages */
+      .item-block, .skills-grid, .section-title {
+        page-break-inside: avoid;
+      }
+      @page {
+        size: A4;
+        margin: 1.6cm 1.4cm;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <h1>Rafia Minhaj</h1>
+    <div class="subtitle">Java Backend Developer | Spring Boot | AI & Cloud Enthusiast</div>
+    <div class="contact-info">
+      <span>📧 <a href="mailto:rafia.23cse347@citranchi.ac.in">rafia.23cse347@citranchi.ac.in</a></span>
+      <span>🔗 <a href="https://github.com/Rafiaminhaj" target="_blank">github.com/Rafiaminhaj</a></span>
+      <span>💼 <a href="https://linkedin.com/in/rafia-minhaj" target="_blank">linkedin.com/in/rafia-minhaj</a></span>
+      <span>📞 +91 6206675008</span>
+      <span>📍 Ranchi, Jharkhand</span>
+    </div>
+  </div>
+
+  <!-- Career Objective -->
+  <div class="section-objective">
+    <div class="objective-text">
+      Detail-oriented and motivated Computer Science Engineering student with a strong foundation in Java backend architectures, Spring Boot framework, and RESTful API integrations. Recognized as a GSSoC '26 Top 4% Global Contributor, demonstrating hands-on expertise in resolving security vulnerabilities, building backend features, and writing clean, scalable code. Seeking the Associate / Application Developer position at Accenture to leverage my technical skill set, passion for open-source collaboration, and agile mindset to deliver innovative software solutions that address real-world business challenges.
+    </div>
+  </div>
+
+  <!-- Education -->
+  <div>
+    <div class="section-title">Education</div>
+    
+    <div class="item-block">
+      <div class="item-header">
+        <div>B.Tech in Computer Science & Engineering <span class="item-date">(College Roll No: 347 | Uni Roll No: 23050440067)</span></div>
+        <div class="item-date">2023 – 2027 (Expected)</div>
+      </div>
+      <div class="item-header">
+        <div class="item-company">Cambridge Institute of Technology, Ranchi</div>
+        <div class="item-date">CGPA: 8.0 / 10</div>
+      </div>
+      <ul class="item-bullets">
+        <li>Key Coursework: Data Structures & Algorithms (DSA), Database Management Systems (DBMS), Operating Systems, OOP (Object-Oriented Programming), Software Engineering.</li>
+      </ul>
+    </div>
+
+    <div class="item-block">
+      <div class="item-header">
+        <div>Class 12th — Science (JAC Board)</div>
+        <div class="item-date">Percentage: 76.00% | 2023</div>
+      </div>
+    </div>
+
+    <div class="item-block">
+      <div class="item-header">
+        <div>Class 10th (JAC Board)</div>
+        <div class="item-date">Percentage: 89.90% | 2021</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Technical Skills -->
+  <div>
+    <div class="section-title">Technical Skills</div>
+    <div class="skills-grid">
+      <div class="skills-category">Languages</div>
+      <div class="skills-list">Java, Python, JavaScript, TypeScript, SQL, C++</div>
+      
+      <div class="skills-category">Frameworks & Backends</div>
+      <div class="skills-list">Spring Boot, FastAPI, Node.js, Express.js, Flask</div>
+      
+      <div class="skills-category">Database Systems</div>
+      <div class="skills-list">MySQL, PostgreSQL, MongoDB, Redis</div>
+      
+      <div class="skills-category">Cloud & DevOps</div>
+      <div class="skills-list">Git, GitHub, CI/CD, GitHub Actions, Docker (basics)</div>
+      
+      <div class="skills-category">Core Concepts</div>
+      <div class="skills-list">Data Structures & Algorithms (DSA), OOPs, REST APIs, Agile Methodologies, Database Schema Design</div>
+    </div>
+  </div>
+
+  <!-- Professional & Internship Experience -->
+  <div>
+    <div class="section-title">Internship & Professional Experience</div>
+
+    <div class="item-block">
+      <div class="item-header">
+        <div>Artificial Intelligence & Machine Learning Intern</div>
+        <div class="item-date">Jun 2026 – Present</div>
+      </div>
+      <div class="item-company">Coding Blocks School of Technology (Remote Summer Internship)</div>
+      <ul class="item-bullets">
+        <li>Undergoing intensive hands-on practical training in Machine Learning, Data Science, and AI under industry experts.</li>
+        <li>Building and training predictive models using supervised and unsupervised machine learning algorithms.</li>
+        <li>Processing datasets and optimizing ML metrics using Python libraries including NumPy, Pandas, and Scikit-Learn.</li>
+      </ul>
+    </div>
+
+    <div class="item-block">
+      <div class="item-header">
+        <div>Software Engineering Extern</div>
+        <div class="item-date">May 2026 – Present</div>
+      </div>
+      <div class="item-company">GradSkills (Summership Internship | Ranchi, India)</div>
+      <ul class="item-bullets">
+        <li>Engineered "NexaFlow AI", a unified conversational intelligence dashboard bridging automated workflows with live vision loops.</li>
+        <li>Developed an autonomous Voice Engine processing dialogues, extracting intents, and programmatically triggering Stripe APIs, CRM systems, and SMS alerts.</li>
+        <li>Integrated deep-learning defect telemetry operating at an ultra-low latency of 12ms per frame (60 FPS).</li>
+        <li>Configured continuous integration/delivery (CI/CD) pipelines to deploy backend architectures globally via the Vercel engine.</li>
+      </ul>
+    </div>
+
+    <div class="item-block">
+      <div class="item-header">
+        <div>Campus Mantri (Official Campus Representative)</div>
+        <div class="item-date">Jan 2026 – Present</div>
+      </div>
+      <div class="item-company">GeeksforGeeks (Part-time | Ranchi, India)</div>
+      <ul class="item-bullets">
+        <li>Serving as the primary liaison between GeeksforGeeks and CIT campus community of 500+ student developers.</li>
+        <li>Promoting courses and resources while coordinating campus-level coding challenges and hackathons.</li>
+        <li>Acting as a brand ambassador to inspire a technical, peer-driven developer and programming culture.</li>
+      </ul>
+    </div>
+
+    <div class="item-block">
+      <div class="item-header">
+        <div>Software Developer Intern</div>
+        <div class="item-date">2024 – 2025</div>
+      </div>
+      <div class="item-company">GeeksforGeeks (GFG | Remote Certification & Challenge Solving)</div>
+      <ul class="item-bullets">
+        <li>Completed comprehensive coursework modules on Data Structures, Algorithms, and Object-Oriented programming in Java.</li>
+        <li>Practiced RESTful API design concepts, understanding routing, HTTP methods, and MVC structure.</li>
+        <li>Contributed to GFG challenge repositories, optimizing runtime and space efficiency of programming submissions.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Projects -->
+  <div>
+    <div class="section-title">Unique Projects (Original Repositories)</div>
+
+    <div class="item-block">
+      <div class="project-header">
+        <div>AI CloudGuard <span class="project-tech">— JavaScript, Node.js, Cloud APIs, Webhooks</span></div>
+        <div class="project-links"><a href="https://github.com/Rafiaminhaj" target="_blank">GitHub</a></div>
+      </div>
+      <ul class="item-bullets">
+        <li>Developed an automated log analysis engine to read AWS and GCP audit logs for policy and security violations.</li>
+        <li>Integrated AI models to dynamically generate mitigation scripts and security patch suggestions.</li>
+        <li>Implemented webhook alerts to notify administrator dashboards immediately on critical threat triggers.</li>
+      </ul>
+    </div>
+
+    <div class="item-block">
+      <div class="project-header">
+        <div>Dukaan Dost AI <span class="project-tech">— JavaScript, Gemini VLM API, Node.js</span></div>
+        <div class="project-links"><a href="https://github.com/Rafiaminhaj" target="_blank">GitHub</a></div>
+      </div>
+      <ul class="item-bullets">
+        <li>Integrated Gemini VLM APIs to support voice-activated inventory logs and stock value evaluations.</li>
+        <li>Designed a responsive, lightweight merchant control portal prioritizing access for non-technical retail users.</li>
+        <li>Configured structured file storage systems to maintain catalog items and verify daily transactions.</li>
+      </ul>
+    </div>
+
+    <div class="item-block">
+      <div class="project-header">
+        <div>Fake News Detector <span class="project-tech">— Python, Flask, Machine Learning, NLP</span></div>
+        <div class="project-links"><a href="https://github.com/Rafiaminhaj" target="_blank">GitHub</a></div>
+      </div>
+      <ul class="item-bullets">
+        <li>Built an NLP text processing pipeline (tokenization, TF-IDF vectorization) to filter article body text.</li>
+        <li>Trained a classification model (Naïve Bayes/Logistic Regression) to detect fake news with high confidence score outputs.</li>
+        <li>Created a lightweight Python Flask backend API to process user-submitted text claims.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Open Source & Community Contributions -->
+  <div>
+    <div class="section-title">Open Source & Community Contributions</div>
+    <ul class="item-bullets">
+      <li><strong>GSSoC 2026 (GirlScript Summer of Code)</strong>: Ranked #1,589 Globally (Top 4%) out of 43,586+ participants. Contributed key features to the <em>SecuScan</em> repository: Implemented SMTP email notifications, added scan report distribution charts, and fixed vulnerabilities by updating build dependencies.</li>
+      <li><strong>Active GitHub Contributor</strong>: Maintained 77+ public repositories spanning backend systems, API architectures, and AI templates on GitHub.</li>
+      <li><strong>GitHub Badges & Hackathons</strong>: Earned Pair Extraordinaire and Pull Shark badges; participated in Elite Coders Open Source Hackathon 2026.</li>
+    </ul>
+  </div>
+
+  <!-- Achievements & Certifications -->
+  <div>
+    <div class="section-title">Achievements & Certifications</div>
+    <ul class="item-bullets">
+      <li><strong>GSSoC 2026 Contributor</strong>: Ranked #1,589 Globally (Top 4% out of 43,500+ builders).</li>
+      <li><strong>GFG Internship Completion Certificate</strong> — GeeksforGeeks, 2024–25.</li>
+      <li><strong>Introduction to Prompt Engineering</strong> — Simplilearn Certification, 2026.</li>
+      <li><strong>Claude 101 Certificate of Completion</strong> — Anthropic, 2026.</li>
+    </ul>
+  </div>
+
+  <!-- Key Strengths -->
+  <div>
+    <div class="section-title">Key Strengths & Soft Skills</div>
+    <div class="strengths-list">
+      <span class="strength-tag">Problem Solving</span>
+      <span class="strength-tag">Team Collaboration</span>
+      <span class="strength-tag">Attention to Detail</span>
+      <span class="strength-tag">Agile Mindset</span>
+      <span class="strength-tag">Good Communication</span>
+      <span class="strength-tag">Quick Learner</span>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -148,8 +148,6 @@ function App() {
   // UI states
   const [loading, setLoading] = useState(false);
   const [apiError, setApiError] = useState(null);
-  const [showToast, setShowToast] = useState(false);
-  const [confetti, setConfetti] = useState([]);
 
   // Cart operations
   const updateQuantity = (productId, amount) => {
@@ -230,26 +228,6 @@ function App() {
       // Success! Update checkout result and navigate
       setCheckoutResult(checkoutResponse);
       setScreen('confirmation');
-      
-      // Trigger mock SMS toast notification
-      setShowToast(true);
-      setTimeout(() => setShowToast(false), 5000);
-
-      // Trigger Confetti generation
-      const particles = [];
-      const colors = ['#a855f7', '#6366f1', '#06b6d4', '#10b981', '#f59e0b', '#ef4444'];
-      for (let i = 0; i < 60; i++) {
-        particles.push({
-          id: i,
-          x: Math.random() * 100, // horizontal start %
-          delay: Math.random() * 2.5, // delay in seconds
-          color: colors[Math.floor(Math.random() * colors.length)],
-          size: Math.random() * 8 + 6, // 6px to 14px size
-          angle: Math.random() * 360,
-          speed: Math.random() * 1.5 + 2 // speed adjustment
-        });
-      }
-      setConfetti(particles);
     } catch (err) {
       setApiError(err.message || 'Something went wrong. Please try again.');
     } finally {
@@ -265,8 +243,6 @@ function App() {
     setCheckoutResult(null);
     setApiError(null);
     setScreen('order');
-    setShowToast(false);
-    setConfetti([]);
   };
 
   // Helper to format currency
@@ -350,40 +326,6 @@ function App() {
       <div className="blob blob-1"></div>
       <div className="blob blob-2"></div>
       <div className="blob blob-3"></div>
-
-      {/* Confetti overlay */}
-      {screen === 'confirmation' && (
-        <div className="confetti-container">
-          {confetti.map((c) => (
-            <div
-              key={c.id}
-              className="confetti-particle"
-              style={{
-                left: `${c.x}%`,
-                backgroundColor: c.color,
-                width: `${c.size}px`,
-                height: `${c.size}px`,
-                animationDelay: `${c.delay}s`,
-                animationDuration: `${c.speed}s`,
-                transform: `rotate(${c.angle}deg)`
-              }}
-            />
-          ))}
-        </div>
-      )}
-
-      {/* Toast Notification for Mock SMS */}
-      {showToast && checkoutResult && (
-        <div className="sms-toast">
-          <div className="sms-toast-header">
-            <span>💬 SMS Notification Sent</span>
-            <span style={{ fontSize: '0.8rem', opacity: 0.6 }}>just now</span>
-          </div>
-          <div className="sms-toast-body">
-            <strong>MiniRetail:</strong> Order {checkoutResult.orderId} confirmed. Amount {formatCurrency(checkoutResult.total)} received successfully. Thank you!
-          </div>
-        </div>
-      )}
 
       {/* Header */}
       <header className="app-header">
